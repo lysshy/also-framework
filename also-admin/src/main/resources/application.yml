@@ -1,0 +1,45 @@
+# 开发环境配置
+server:
+  # 服务器的HTTP端口，默认为80
+  port: 3068
+  servlet:
+    # 应用的访问路径
+    context-path: /admin
+  tomcat:
+    # tomcat的URI编码
+    uri-encoding: UTF-8
+    threads:
+      max: 800
+      min-spare: 30
+
+# 日志配置
+spring:
+  application:
+    name: also-admin
+  jackson:
+    time-zone: GMT+8
+    date-format: yyyy-MM-dd HH:mm:ss
+  profiles:
+    active: druid,extend
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 100MB
+      location: temp
+  messages:
+    basename: i18n/messages,i18n/messages-custom
+    encoding: UTF-8
+
+mybatis-plus:
+  type-aliases-package: com.also.admin.entity
+  mapper-locations: classpath*:mapper/**/*Mapper.xml
+  global-config:
+    db-config:
+      id-type: auto
+  configuration:
+    jdbc-type-for-null: 'null'
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+logging:
+  level:
+    root: info

@@ -1,0 +1,11 @@
+border:
+  after:
+    deviceNos: 441938000000010392
+    service:
+      #ftp配置
+      ftp:
+        hostname: 44.196.151.3
+        username: ftpuser01
+        password: 666dgJY#&
+    #        encrypt: jasypt
+

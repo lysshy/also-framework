@@ -1,0 +1,10 @@
+border:
+  pre:
+    service:
+      #ftp配置
+      ftp:
+        hostname: 44.196.151.3
+        username: ftpuser01
+        password: 666dgJY#&
+    #        encrypt: jasypt
+
