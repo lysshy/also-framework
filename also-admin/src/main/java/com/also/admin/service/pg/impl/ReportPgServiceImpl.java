@@ -6,6 +6,7 @@ import com.also.admin.mapper.pg.ReportPgMapper;
 import com.also.admin.service.pg.ReportPgService;
 import com.also.framework.datasource.annotation.DataSource;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 
 import org.springframework.stereotype.Service;
@@ -30,5 +31,11 @@ public class ReportPgServiceImpl extends ServiceImpl<ReportPgMapper, ReportPg> i
     @Override
     public void batchInsert(List<ReportPg> reportPgs) {
         this.saveBatch(reportPgs);
+    }
+
+    @Override
+    public List<ReportPg> selectPage(int pageNo, int pageSize) {
+        Page<ReportPg> page = new Page<>(pageNo, pageSize);
+        return this.page(page).getRecords();
     }
 }

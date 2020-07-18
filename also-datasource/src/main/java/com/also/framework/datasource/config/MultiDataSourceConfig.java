@@ -2,6 +2,8 @@ package com.also.framework.datasource.config;
 
 import com.alibaba.druid.pool.DruidDataSource;
 import com.also.framework.datasource.enums.DatasourceTypeEnum;
+import com.baomidou.mybatisplus.extension.plugins.PaginationInterceptor;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Primary;
@@ -14,9 +16,15 @@ import java.util.Map;
 @Configuration
 public class MultiDataSourceConfig {
 
+    @Bean
+    @ConditionalOnProperty(name = "also.datasource.allow-page", havingValue = "true")
+    public PaginationInterceptor paginationInterceptor() {
+        return new PaginationInterceptor();
+    }
+
     @Bean(name = {"dynamicDataSource"})
     @Primary
-    public DynamicDataSource dataSource(MultiDataSourceProperties multiDataSourceProperties) {
+    public DataSource dataSource(MultiDataSourceProperties multiDataSourceProperties) {
         Map<Object, Object> targetDataSources = new HashMap<>();
         List<DataSourceProperties> dataSourceConfigs = multiDataSourceProperties.getDataSourceConfigs();
         DataSource defaultDataSource = null;

@@ -20,7 +20,7 @@
         <spring-boot-version>2.3.1.RELEASE</spring-boot-version>
 <!--        <spring-boot-version>2.2.2.RELEASE</spring-boot-version>-->
         <druid.version>1.1.23</druid.version>
-        <mybatis-plus-version>3.3.0</mybatis-plus-version>
+        <mybatis-plus-version>3.3.2</mybatis-plus-version>
         <poi-version>4.1.2</poi-version>
         <oracle-version>11.2.0.3</oracle-version>
         <pg-version>42.2.14</pg-version>

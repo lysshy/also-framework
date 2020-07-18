@@ -1,7 +1,7 @@
 border:
   after:
     service:
-      #ftp配置
+      #ftp
       ftp:
         hostname: 44.196.151.3
         username: ftpuser01

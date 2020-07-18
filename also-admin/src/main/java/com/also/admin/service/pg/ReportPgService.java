@@ -12,4 +12,6 @@ public interface ReportPgService {
     void batchUpdate(List<ReportPg> reportPgs);
 
     void batchInsert(List<ReportPg> reportPgs);
+
+    List<ReportPg> selectPage(int pageNo, int pageSize);
 }

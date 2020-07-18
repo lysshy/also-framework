@@ -12,4 +12,6 @@ public interface ReportOracleService {
     List<ReportOracle> selectReports(QueryWrapper<ReportOracle> queryWrapper);
 
     void batchDelete(List<ReportOracle> reportOracles);
+
+    List<ReportOracle> selectPage(int page, int pageSize);
 }
