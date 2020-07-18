@@ -3,6 +3,7 @@ package com.also.framework.datasource.config;
 import com.alibaba.druid.pool.DruidDataSource;
 import com.also.framework.datasource.enums.DatasourceTypeEnum;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Primary;
 
 import javax.sql.DataSource;
@@ -10,6 +11,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+@Configuration
 public class MultiDataSourceConfig {
 
     @Bean(name = {"dynamicDataSource"})
