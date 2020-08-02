@@ -2,6 +2,8 @@ server:
   port: 3068
   servlet:
     context-path: /admin
+    session:
+      timeout: 1d
   tomcat:
     uri-encoding: UTF-8
     threads:
@@ -25,6 +27,25 @@ spring:
     basename: i18n/messages,i18n/messages-custom
     encoding: UTF-8
 
+#  boot:
+#    admin:
+#      client:
+#        url: http://localhost:4000
+
+management:
+  metrics:
+    tags:
+      application: actuator-demo
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+#      base-path: /metrics
+  endpoint:
+    health:
+      show-details: always
+
+
 mybatis-plus:
   type-aliases-package: com.also.admin.entity
   mapper-locations: classpath*:mapper/**/*Mapper.xml
@@ -37,4 +58,9 @@ mybatis-plus:
 
 logging:
   level:
-    root: info
+    root: debug
+
+security:
+  basic:
+    enabled: true
+

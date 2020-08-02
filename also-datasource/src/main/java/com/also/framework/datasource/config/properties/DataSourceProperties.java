@@ -1,5 +1,6 @@
-package com.also.framework.datasource.config;
+package com.also.framework.datasource.config.properties;
 
+import com.zaxxer.hikari.HikariConfig;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -13,4 +14,9 @@ public class DataSourceProperties {
     private String username;
     private String password;
     private String driverClassName;
+
+    private HikariConfig hikari;
+
+    private DruidProperties druid;
+
 }

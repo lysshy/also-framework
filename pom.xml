@@ -12,6 +12,12 @@
     <modules>
         <module>also-datasource</module>
         <module>also-admin</module>
+        <module>also-actuator-admin-server</module>
+        <module>also-security</module>
+        <module>also-security-session</module>
+        <module>also-common</module>
+        <module>also-security-jwt</module>
+        <module>also-security-common</module>
     </modules>
 
 
@@ -24,6 +30,12 @@
         <poi-version>4.1.2</poi-version>
         <oracle-version>11.2.0.3</oracle-version>
         <pg-version>42.2.14</pg-version>
+        <prometheus-version>0.0.26</prometheus-version>
+        <spring-boot-admin-version>2.2.0</spring-boot-admin-version>
+        <spring-social-version>1.1.6.RELEASE</spring-social-version>
+        <swagger-version>2.6.1</swagger-version>
+        <fastjson-version>1.2.69</fastjson-version>
+        <commons-lang3-version>3.7</commons-lang3-version>
         <java-version>1.8</java-version>
         <project-encoding>UTF-8</project-encoding>
     </properties>
@@ -32,7 +44,37 @@
         <dependencies>
             <dependency>
                 <groupId>com.also.framework</groupId>
+                <artifactId>also-common</artifactId>
+                <version>${also-version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.also.framework</groupId>
                 <artifactId>also-datasource</artifactId>
+                <version>${also-version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.also.framework</groupId>
+                <artifactId>also-security</artifactId>
+                <version>${also-version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.also.framework</groupId>
+                <artifactId>also-security-common</artifactId>
+                <version>${also-version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.also.framework</groupId>
+                <artifactId>also-security-session</artifactId>
+                <version>${also-version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.also.framework</groupId>
+                <artifactId>also-security-jwt</artifactId>
                 <version>${also-version}</version>
             </dependency>
 
@@ -45,8 +87,14 @@
             </dependency>
 
             <dependency>
+                <groupId>org.springframework.social</groupId>
+                <artifactId>spring-social-config</artifactId>
+                <version>${spring-social-version}</version>
+            </dependency>
+
+            <dependency>
                 <groupId>com.alibaba</groupId>
-                <artifactId>druid</artifactId>
+                <artifactId>druid-spring-boot-starter</artifactId>
                 <version>${druid.version}</version>
             </dependency>
 
@@ -78,6 +126,60 @@
                 <groupId>org.postgresql</groupId>
                 <artifactId>postgresql</artifactId>
                 <version>${pg-version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>io.prometheus</groupId>
+                <artifactId>simpleclient_spring_boot</artifactId>
+                <version>${prometheus-version}</version>
+            </dependency>
+
+            <!-- https://mvnrepository.com/artifact/io.micrometer/micrometer-registry-prometheus -->
+            <dependency>
+                <groupId>io.micrometer</groupId>
+                <artifactId>micrometer-registry-prometheus</artifactId>
+                <version>1.5.2</version>
+            </dependency>
+
+            <dependency>
+                <groupId>de.codecentric</groupId>
+                <artifactId>spring-boot-admin-starter-server</artifactId>
+                <version>${spring-boot-admin-version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>de.codecentric</groupId>
+                <artifactId>spring-boot-admin-starter-client</artifactId>
+                <version>${spring-boot-admin-version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>io.springfox</groupId>
+                <artifactId>springfox-swagger2</artifactId>
+                <version>${swagger-version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.springfox</groupId>
+                <artifactId>springfox-swagger-ui</artifactId>
+                <version>${swagger-version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>io.jsonwebtoken</groupId>
+                <artifactId>jjwt</artifactId>
+                <version>0.9.0</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>fastjson</artifactId>
+                <version>${fastjson-version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-lang3</artifactId>
+                <version>${commons-lang3-version}</version>
             </dependency>
 
         </dependencies>

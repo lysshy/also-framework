@@ -1,5 +1,6 @@
-package com.also.framework.datasource.config;
+package com.also.framework.datasource.config.properties;
 
+import com.also.framework.datasource.config.properties.DataSourceProperties;
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.boot.context.properties.ConfigurationProperties;

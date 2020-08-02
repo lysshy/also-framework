@@ -3,13 +3,13 @@ package com.also.framework.datasource.enums;
 import lombok.Getter;
 
 @Getter
-public enum DatasourceTypeEnum {
+public enum DataSourceTypeEnum {
     DRUID("druid"),
     HIKARI("hikari");
 
     private String name;
 
-    DatasourceTypeEnum(String name) {
+    DataSourceTypeEnum(String name) {
         this.name = name;
     }
 }
