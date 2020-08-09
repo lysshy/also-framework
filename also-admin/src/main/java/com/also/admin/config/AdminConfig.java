@@ -1,11 +1,11 @@
 package com.also.admin.config;
 
-import com.also.framework.common.service.MessageService;
+import com.also.framework.cache.redis.RedisHelper;
+import com.also.framework.security.jwt.config.cache.UserLoginCacheService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.support.ResourceBundleMessageSource;
-import org.springframework.security.web.session.InvalidSessionStrategy;
 
 import javax.annotation.PostConstruct;
 
@@ -25,5 +25,9 @@ public class AdminConfig {
 //        return new MyInvalidSessionStrategy(messageService);
 //    }
 
+    @Bean
+    public UserLoginCacheService userLoginCacheService(RedisHelper redisHelper) {
+        return new RedisUserLoginCacheServiceImpl(redisHelper);
+    }
 
 }

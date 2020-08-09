@@ -18,6 +18,12 @@ public class DateUtils {
         return LocalDateTimeUtils.toDate(localDateTime);
     }
 
+    public static Date plusMillisecond(Date date, long value) {
+        LocalDateTime localDateTime = toLocalDateTime(date);
+        localDateTime = localDateTime.plus(value, ChronoUnit.MILLIS);
+        return LocalDateTimeUtils.toDate(localDateTime);
+    }
+
     public static void main(String[] args) {
         System.out.println(toLocalDateTime(new Date()));
     }

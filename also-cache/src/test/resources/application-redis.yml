@@ -1,0 +1,11 @@
+also:
+  cache:
+    type: redis
+    redis:
+      host: localhost
+      port: 6379
+      password: also
+
+logging:
+  level:
+    root: info

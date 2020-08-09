@@ -20,6 +20,7 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.web.access.AccessDeniedHandler;
 import org.springframework.security.web.authentication.AuthenticationFailureHandler;
 import org.springframework.security.web.authentication.AuthenticationSuccessHandler;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
@@ -58,6 +59,9 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Autowired
     private AuthorityService authorityService;
+
+    @Autowired
+    private AccessDeniedHandler accessDeniedHandler;
 
     @Override
     public void configure(AuthenticationManagerBuilder auth) throws Exception {
@@ -107,7 +111,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .apply(smsAuthenticationConfig); // 将短信验证码认证配置加到 Spring Security 中
 
         //设置异常处理类
-        httpSecurity.exceptionHandling().accessDeniedHandler(new DefaultAccessDeniedHandler());
+        httpSecurity.exceptionHandling().accessDeniedHandler(accessDeniedHandler);
         // 禁用缓存
         httpSecurity.headers().cacheControl();
 

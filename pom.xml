@@ -18,6 +18,9 @@
         <module>also-common</module>
         <module>also-security-jwt</module>
         <module>also-security-common</module>
+        <module>also-cache-redis</module>
+        <module>also-cache-caffeine</module>
+        <module>also-cache</module>
     </modules>
 
 
@@ -75,6 +78,12 @@
             <dependency>
                 <groupId>com.also.framework</groupId>
                 <artifactId>also-security-jwt</artifactId>
+                <version>${also-version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.also.framework</groupId>
+                <artifactId>also-cache</artifactId>
                 <version>${also-version}</version>
             </dependency>
 

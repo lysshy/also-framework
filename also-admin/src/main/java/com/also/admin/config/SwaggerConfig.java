@@ -7,6 +7,8 @@ import springfox.documentation.builders.ApiInfoBuilder;
 import springfox.documentation.builders.ParameterBuilder;
 import springfox.documentation.builders.PathSelectors;
 import springfox.documentation.builders.RequestHandlerSelectors;
+import springfox.documentation.schema.ModelRef;
+import springfox.documentation.schema.ModelReference;
 import springfox.documentation.service.ApiInfo;
 import springfox.documentation.service.Contact;
 import springfox.documentation.service.Parameter;
@@ -41,7 +43,7 @@ public class SwaggerConfig {
     private List<Parameter> getParameters() {
         ParameterBuilder parameterBuilder = new ParameterBuilder();
         List<Parameter> parameters = new ArrayList<>();
-        parameterBuilder.name("Authorization").description("令牌")
+        parameterBuilder.name("Authorization").modelRef(new ModelRef("string")).description("令牌")
                 .parameterType("header").required(false);
         parameters.add(parameterBuilder.build());
         return parameters;

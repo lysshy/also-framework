@@ -23,27 +23,35 @@ spring:
       max-file-size: 10MB
       max-request-size: 100MB
       location: temp
-  messages:
-    basename: i18n/messages,i18n/messages-custom
-    encoding: UTF-8
+#  redis:
+#    host: localhost
+#    port: 6379
+#    password: also
+#    timeout: 10000ms
+#    lettuce:
+#      pool:
+#        max-active: 8
+#        max-wait: -1ms
+#        max-idle: 8
+#        min-idle: 0
 
 #  boot:
 #    admin:
 #      client:
 #        url: http://localhost:4000
 
-management:
-  metrics:
-    tags:
-      application: actuator-demo
-  endpoints:
-    web:
-      exposure:
-        include: '*'
-#      base-path: /metrics
-  endpoint:
-    health:
-      show-details: always
+#management:
+#  metrics:
+#    tags:
+#      application: actuator-demo
+#  endpoints:
+#    web:
+#      exposure:
+#        include: '*'
+##      base-path: /metrics
+#  endpoint:
+#    health:
+#      show-details: always
 
 
 mybatis-plus:
@@ -60,7 +68,15 @@ logging:
   level:
     root: debug
 
-security:
-  basic:
-    enabled: true
+also:
+  security:
+    ignore:
+      urls:
+        - "/auth/**"
+        - "/login.html"
+        - "/css/**"
+        - "/v2/api-docs"
+        - "/swagger-resources/**"
+        - "/webjars/**"
+        - "/swagger-ui.html"
 

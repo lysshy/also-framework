@@ -1,0 +1,13 @@
+also:
+  cache:
+    type: caffeine
+    caffeine:
+      cache-items:
+        - name: user
+          spec: initialCapacity=10,maximumSize=500,expireAfterAccess=2s
+        - name: role
+      spec: initialCapacity=10,maximumSize=500,expireAfterAccess=10s
+
+logging:
+  level:
+    root: info

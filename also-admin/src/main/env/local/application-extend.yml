@@ -8,3 +8,11 @@ border:
         password: 666dgJY#&
     #        encrypt: jasypt
 
+also:
+  cache:
+    type: redis
+    redis:
+      host: localhost
+      port: 6379
+      password: also
+      expireSecond: 10
